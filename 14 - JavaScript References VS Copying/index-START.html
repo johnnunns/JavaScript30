@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>JS Reference VS Copy</title>
 </head>
+
 <body>
 
   <script>
@@ -11,10 +13,12 @@
 
     // Let's say we have an array
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
-
     // and we want to make a copy of it.
 
     // You might think we can just do something like this:
+
+    // const team = players
+    // team[3] = "Other"
 
     // however what happens when we update that array?
 
@@ -28,25 +32,56 @@
 
     // one way
 
+    const team2 = players.slice();
+    team2[3] = "Others";
+
     // or create a new array and concat the old one in
 
+    const team3 = [].concat(players);
+    team3[3] = "Other"
+
     // or use the new ES6 Spread
+
+    const team4 = [...players];
+    team4[3] = "Other";
+
+    const team5 = Array.from(players)
 
     // now when we update it, the original one isn't changed
 
     // The same thing goes for objects, let's say we have a person object
 
+    const person = {
+      name: 'John',
+      age: 28,
+    }
+
     // with Objects
 
     // and think we make a copy:
+
+    const captain = Object.assign({}, person, { number: 99 })
 
     // how do we take a copy instead?
 
     // We will hopefully soon see the object ...spread
 
-    // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+    // const captain = {...person};
 
+    const person2 = {
+      name: 'John',
+      age: 28,
+      social: {
+        linkedIn: 'johnnunns',
+        facebook: 'john - nunns'
+      }
+    }
+
+    const captain2 = Object.assign({}, person2)
+
+    // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
   </script>
 
 </body>
+
 </html>
