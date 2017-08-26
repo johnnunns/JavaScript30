@@ -7,6 +7,22 @@
 </head>
 <body>
 <script>
+
+  const store = [];
+  const secretCode = 'secret'
+  window.addEventListener('keyup', (e)=>{
+    store.push(e.key)
+    // if(store.length > secretCode.length){
+    //   store.splice(0, 1);
+    // }
+    store.splice(-secretCode.length -1, store.length - secretCode.length)
+    if(store.join('').includes(secretCode)){
+      cornify_add();
+    }
+  })
+
+
+
 </script>
 </body>
 </html>
