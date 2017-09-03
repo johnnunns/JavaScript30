@@ -68,6 +68,10 @@ function rgbSplit(pixels){
    return pixels;
 }
 
+function greenScreen(pixels){
+    
+}
+
 
 getVideo();
 video.addEventListener('canplay', paintToCanvas)
