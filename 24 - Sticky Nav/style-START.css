@@ -39,6 +39,11 @@ h1 {
   text-shadow: 3px 4px 0 rgba(0,0,0,0.2)
 }
 
+.fixed-nav nav{
+  position: fixed;
+  box-shadow: 2px 2px 2px 2px;
+}
+
 nav {
   background:black;
   top:0;
@@ -61,6 +66,10 @@ nav li {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.fixed-nav li.logo{
+  max-width: 500px;
 }
 
 li.logo {
